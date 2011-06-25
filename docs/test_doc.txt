@@ -1,0 +1,19 @@
+Satellite Defense
+
+Two Basic Types of Satellites:
+- Important: These are the satellites you are trying to keep alive
+- Defensive: These are the satellites you use to keep the Important ones alive
+
+Types of IMPORTANT Satellites:
+- Plain: Does nothing but keep the player from getting Game Over
+
+Types of DEFENSIVE Satellites:
+- Attacking: Attacks the missiles to knock them out of space
+- Defending: Redirects nearby missiles to themselves (takes the hit as opposed to the Important ones)
+- Scanning?: Alerts the user of nearby missiles or missiles homing in on nearby Important Satellites (could make this a feature of Important ones)
+
+Coordinate System:
+- Cubic: x, y, z
+-or-
+- 3D Polar: radius, theta (horizontal), zeta (vertical)
+
