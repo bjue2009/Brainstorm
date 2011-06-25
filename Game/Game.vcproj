@@ -40,6 +40,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
+				AdditionalIncludeDirectories="C:\Users\Wade\Desktop\test_workspace\Brainstorm\src\misc;C:\Users\Wade\Desktop\test_workspace\Brainstorm\src\global;C:\Users\Wade\Desktop\test_workspace\Brainstorm\src\exec;C:\Users\Wade\Desktop\test_workspace\Brainstorm\src\domain"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -109,6 +110,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
+				AdditionalIncludeDirectories="C:\Users\Wade\Desktop\test_workspace\Brainstorm\src\misc;C:\Users\Wade\Desktop\test_workspace\Brainstorm\src\global;C:\Users\Wade\Desktop\test_workspace\Brainstorm\src\exec;C:\Users\Wade\Desktop\test_workspace\Brainstorm\src\domain"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
 				WarningLevel="3"
@@ -157,21 +159,37 @@
 	</References>
 	<Files>
 		<Filter
-			Name="Source Files"
+			Name="exec"
 			Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx"
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
+			<File
+				RelativePath="..\src\exec\main.c"
+				>
+			</File>
 		</Filter>
 		<Filter
-			Name="Header Files"
+			Name="global"
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
+			<File
+				RelativePath="..\src\global\g_std_types.h"
+				>
+			</File>
 		</Filter>
 		<Filter
-			Name="Resource Files"
+			Name="domain"
 			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav"
 			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
+			>
+			<File
+				RelativePath="..\src\domain\platform.h"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="misc"
 			>
 		</Filter>
 	</Files>
