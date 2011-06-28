@@ -58,7 +58,9 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalDependencies="SDL.lib SDLmain.lib"
 				GenerateDebugInformation="true"
+				SubSystem="2"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -127,7 +129,9 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalDependencies="SDL.lib SDLmain.lib"
 				GenerateDebugInformation="true"
+				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
 				TargetMachine="1"
@@ -164,6 +168,10 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
+				RelativePath="..\src\exec\e_buffer.c"
+				>
+			</File>
+			<File
 				RelativePath="..\src\exec\main.c"
 				>
 			</File>
@@ -177,12 +185,24 @@
 				RelativePath="..\src\global\g_std_types.h"
 				>
 			</File>
+			<File
+				RelativePath="..\src\global\g_utilities.c"
+				>
+			</File>
+			<File
+				RelativePath="..\src\global\g_utilities.h"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="domain"
 			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav"
 			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
 			>
+			<File
+				RelativePath="..\src\domain\e_buffer_api.h"
+				>
+			</File>
 			<File
 				RelativePath="..\src\domain\platform.h"
 				>
