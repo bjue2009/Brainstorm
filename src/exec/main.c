@@ -42,36 +42,36 @@ int main (int argc, char *argv[])
    int last_update;
 
    char fps_string[64];
-
+   float hypotenuse, height;
 
 
    SDL_Rect rect;
    SDL_Surface* hello = NULL;
    SDL_Surface* screen = NULL;
-#define RADIUS (100)
+#define RADIUS (300)
 
-   camera[G_X] = RADIUS;
+   camera[G_X] = 0;
    camera[G_Y] = 0;
    camera[G_Z] = 0;
    frame = 0;
    ticks = 0;
    last_update = 0;
    //Start SDL
-   SDL_Init( SDL_INIT_EVERYTHING );
+   SDL_Init (SDL_INIT_EVERYTHING);
 
    //Set up screen
-   screen = SDL_SetVideoMode( 640, 480, 32, SDL_SWSURFACE );
+   screen = SDL_SetVideoMode (640, 480, 32, SDL_SWSURFACE);
 
 
    for (j = 0; j < NUM_SATS; j++)
    {
-      thetas[j] = j * j;
-      phis[j]   = j * j * j;
+      thetas[j] = rand()%360;
+      phis[j]   = rand()%360;
    }
 
    //Load image
    //hello = SDL_LoadBMP( "hello.bmp" );
-   for (i = 0; i < 360; i++)
+   for (i = 0; i < 90; i++)
    {//add in support for phi and pi
       /*TODO optimize trig functions by using lookup tables instead */
       SDL_FillRect(screen,NULL, 0x000000); 
@@ -81,17 +81,29 @@ int main (int argc, char *argv[])
          thetas[j]++;
          phis[j]++;
 
-         sat[j][G_X] = RADIUS * cos(thetas[j]*M_PI/180) * sin(phis[j]*M_PI/180);
-         sat[j][G_Y] = RADIUS * sin(thetas[j]*M_PI/180) * sin(phis[j]*M_PI/180);
-         sat[j][G_Z] = RADIUS * cos(phis[j]*M_PI/180);
+         sat[j][G_X] = RADIUS * cos(thetas[j]*M_PI/180.0) * sin(phis[j]*M_PI/180.0);
+         sat[j][G_Y] = RADIUS * sin(thetas[j]*M_PI/180.0) * sin(phis[j]*M_PI/180.0);
+         sat[j][G_Z] = RADIUS * cos(phis[j]*M_PI/180.0);
 
-         current_distance = g_get_distance (camera, sat);
-         rect.x = 320 + sat[j][G_X];
-         rect.y = 240 + sat[j][G_Y];
-         rect.h = (2*RADIUS)-current_distance;
-         rect.w = rect.h;
-         SDL_FillRect (screen, &rect, 0xffffffff);
 
+
+         current_distance = g_get_distance (camera, sat[j]);
+
+        // if (current_distance < RADIUS)
+         {
+            rect.x = 320 + sat[j][G_X];
+            rect.y = 240 - sat[j][G_Z];
+            rect.h = (2*RADIUS - current_distance)*.05+1;
+            rect.w = rect.h;
+            SDL_FillRect (screen, &rect, 0x00ffff00);
+         }
+#if 0
+            (thetas[j]<<24) ||
+            (phis[j]<<16)   ||
+            (thetas[j]<<8)  ||
+            (phis[j]));
+
+#endif
       }
       
 

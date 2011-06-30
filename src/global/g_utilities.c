@@ -19,9 +19,9 @@ float g_get_distance(g_position_type to,
    /* TODO replace this with taylor series approximation to avoid expensive calculations*/
    float distance;
 
-   distance = sqrt (pow (to[G_X]-from[G_X], 2) + 
-                    pow (to[G_Y]-from[G_Y], 2) + 
-                    pow (to[G_Z]-from[G_Z], 2));
+   distance = sqrt (pow ((float)to[G_X]-from[G_X], 2.0) + 
+                    pow ((float)to[G_Y]-from[G_Y], 2.0) + 
+                    pow ((float)to[G_Z]-from[G_Z], 2.0));
 
    return distance;
 }
