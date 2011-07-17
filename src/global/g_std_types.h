@@ -17,7 +17,7 @@ typedef unsigned char uchar;
 typedef unsigned char boolean;
 
 #ifndef M_PI
-#define M_PI 3.14159265358979323846
+#define M_PI (3.14159265358979323846)
 #endif
 
 /* this defines structures that hold location value in 3 dimensions.

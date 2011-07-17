@@ -40,10 +40,10 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="C:\Users\Wade\Desktop\test_workspace\Brainstorm\src\misc;C:\Users\Wade\Desktop\test_workspace\Brainstorm\src\global;C:\Users\Wade\Desktop\test_workspace\Brainstorm\src\exec;C:\Users\Wade\Desktop\test_workspace\Brainstorm\src\domain"
+				AdditionalIncludeDirectories="C:\Users\Wade\Desktop\test_workspace\Brainstorm\src\misc;C:\Users\Wade\Desktop\test_workspace\Brainstorm\src\graphics;C:\Users\Wade\Desktop\test_workspace\Brainstorm\src\global;C:\Users\Wade\Desktop\test_workspace\Brainstorm\src\exec;C:\Users\Wade\Desktop\test_workspace\Brainstorm\src\engine;C:\Users\Wade\Desktop\test_workspace\Brainstorm\src\domain"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
-				RuntimeLibrary="3"
+				RuntimeLibrary="2"
 				WarningLevel="3"
 				DebugInformationFormat="4"
 			/>
@@ -112,7 +112,9 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
-				AdditionalIncludeDirectories="C:\Users\Wade\Desktop\test_workspace\Brainstorm\src\misc;C:\Users\Wade\Desktop\test_workspace\Brainstorm\src\global;C:\Users\Wade\Desktop\test_workspace\Brainstorm\src\exec;C:\Users\Wade\Desktop\test_workspace\Brainstorm\src\domain"
+				AdditionalIncludeDirectories="C:\Users\Wade\Desktop\test_workspace\Brainstorm\src\misc;C:\Users\Wade\Desktop\test_workspace\Brainstorm\src\graphics;C:\Users\Wade\Desktop\test_workspace\Brainstorm\src\global;C:\Users\Wade\Desktop\test_workspace\Brainstorm\src\exec;C:\Users\Wade\Desktop\test_workspace\Brainstorm\src\engine;C:\Users\Wade\Desktop\test_workspace\Brainstorm\src\domain"
+				MinimalRebuild="true"
+				BasicRuntimeChecks="3"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
 				WarningLevel="3"
@@ -172,6 +174,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\src\exec\e_msg_queue.c"
+				>
+			</File>
+			<File
 				RelativePath="..\src\exec\main.c"
 				>
 			</File>
@@ -181,6 +187,14 @@
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
+			<File
+				RelativePath="..\src\global\g_memops.c"
+				>
+			</File>
+			<File
+				RelativePath="..\src\global\g_memops.h"
+				>
+			</File>
 			<File
 				RelativePath="..\src\global\g_std_types.h"
 				>
@@ -204,12 +218,48 @@
 				>
 			</File>
 			<File
+				RelativePath="..\src\domain\e_krn_defs.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\domain\e_msg_queue_api.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\domain\e_msgs.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\domain\gfx_api.h"
+				>
+			</File>
+			<File
 				RelativePath="..\src\domain\platform.h"
 				>
 			</File>
 		</Filter>
 		<Filter
 			Name="misc"
+			>
+			<File
+				RelativePath="..\src\misc\debug.c"
+				>
+			</File>
+			<File
+				RelativePath="..\src\misc\debug.h"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="graphics"
+			>
+			<File
+				RelativePath="..\src\graphics\gfx_task.c"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="engine"
 			>
 		</Filter>
 	</Files>

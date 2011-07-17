@@ -31,7 +31,14 @@
 #include <string.h>
 #include <stdio.h>
 #include <math.h>
+#include "SDL_mutex.h"
+/* disable warnings */
+#ifndef _CRT_SECURE_NO_WARNINGS
+#define _CRT_SECURE_NO_WARNINGS
 #endif
+#endif
+
+#define FOREVER while (1)\
 
 
 #endif /* PLATFORM_H */
