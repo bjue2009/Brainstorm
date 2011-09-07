@@ -12,6 +12,7 @@
 
 /* other  includes */
 #include "SDL_mutex.h"
+#include <debug.h>
 
 
 /* defines how many of each buffer there are */
@@ -273,6 +274,7 @@ void e_free_buffer (void *ptr)
 
       /* update buffer info */
       header->in_use = FALSE;
+      ptr = NULL;
 
       if (SDL_mutexV (e_buf_mutex) != 0)
       {

@@ -15,8 +15,9 @@
 
 typedef enum E_MESSAGE_TYPE
 {
+   E_NO_MSG                                           = 0x0000,
    /* USER INPUT MESSAGES */
-   UI_MSG1                                            = 0x0000,      /* UIT */
+   UI_MSG1                                            = 0x0001,      /* UIT */
                      /**
                        *
                        *
@@ -24,6 +25,8 @@ typedef enum E_MESSAGE_TYPE
    UI_LAST_MSG                                        = 0x3fff,
    /* GRAPHICS TASK MESSAGES */
    GT_MSG1                                            = 0x4000,      /* GT  */
+   GT_MSG_PERFORM_DRAW                                = 0x4001,      /* draw all graphics */
+   GT_MSG_SET_VIEW_RECT                               = 0x4100,      /* sets the view rect location */
                            /**
                              *
                              *
@@ -31,6 +34,7 @@ typedef enum E_MESSAGE_TYPE
    GT_LAST_MSG                                        = 0x7fff,
    /* ENGINE TASK MESSAGES */
    ET_MSG1                                            = 0x8000,      /* ET  */
+   ET_MSG_UPDATE_ENGINE                               = 0x8001,
                                  /**
                                    *
                                    *

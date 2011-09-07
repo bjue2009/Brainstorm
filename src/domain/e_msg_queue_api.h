@@ -8,6 +8,7 @@
 /* domain includes */
 #include <e_msgs.h>
 #include <e_krn_defs.h>
+#include <e_buffer_api.h>
 
 /* global includes */
 #include <g_std_types.h>

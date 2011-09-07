@@ -20,6 +20,14 @@ typedef unsigned char boolean;
 #define M_PI (3.14159265358979323846)
 #endif
 
+
+/* screen width in pixels */
+#define G_MAX_SCREEN_WIDTH (800)
+/* screen height in pixels */
+#define G_MAX_SCREEN_HEIGHT (600)
+
+#define G_MAX_RADIUS (G_MAX_SCREEN_HEIGHT / 2)
+
 /* this defines structures that hold location value in 3 dimensions.
  * the coordinate system used is ECEF (Earth Centered Earth Fixed) with
  * the z axis parallel to the Earth's axis and the XY plane parallel to the
@@ -33,6 +41,17 @@ typedef enum G_3D_ELEMENT_TYPE
    G_Z,
    G_MAX_DIMENSIONS
 }g_3d_element_type;
+
+
+typedef struct G_LOCATION_TYPE
+{
+   ulong x;
+   ulong y;
+}g_location_type;
+
+#define NUM_SATS (5)
+/* number of life satellites */
+#define G_NUM_LIFE_SATS (15)
 
 typedef float g_3d_array[G_MAX_DIMENSIONS];
 typedef g_3d_array g_position_type;
@@ -62,6 +81,40 @@ typedef enum G_PLAYER_TYPE
    G_PLAYER_NEUTRAL,    /* Neutral         */
    G_PLAYER_USER        /* User controlled */
 }g_player_type;
+
+typedef enum G_ORBIT_TYPE
+{
+   G_LOW_ORBIT,
+   G_MEDIUM_ORBIT,
+   G_HIGH_ORBIT
+}g_orbit_type;
+
+#define HEO_RADIUS (180) /* high earth orbit */
+#define MEO_RADIUS (100) /* meadium earth orbit */
+#define LEO_RADIUS (50)  /* low earth orbit */
+
+
+/* defines the structure for a satellite */
+typedef struct G_SAT_ENTITY_TYPE
+{
+   g_orbit_type      orbit;
+   g_position_type   position;
+   float             orbital_velocity;
+   float             orbital_radius;
+   int               theta;
+   boolean           alive;
+}g_sat_entity_type;
+
+/* defines the structure for an enemy */
+typedef struct G_ENEMY_TYPE
+{
+   g_orbit_type      orbit;
+   g_position_type   position;
+   int               hp;   
+   boolean           alive;
+}g_enemy_type;
+
+
 
 
 

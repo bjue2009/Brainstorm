@@ -12,6 +12,7 @@
 
 /* global includes */
 /* other  includes */
+#include <debug.h>
 
 /* msg queue definitions */
 typedef struct MSG_QUEUE_TYPE
@@ -97,7 +98,7 @@ e_message_type e_recv_message (e_msg_queue_type queue, void **ptr)
 
    if (SDL_mutexP (e_msg_mutex) == 0)
    {
-      msg_type = E_LAST_MESSAGE;
+      msg_type = E_NO_MSG;
 
       if (msg_queue[queue].msg_count != 0)
       {

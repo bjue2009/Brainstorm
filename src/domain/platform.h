@@ -20,6 +20,10 @@
 #define CFG_ON  (1)
 #define CFG_OFF (0)
 
+/* shows coordinates of view rect */
+#define DEBUG_VIEW_RECT (CFG_ON)
+#define DEBUG_SHOW_FPS  (CFG_ON)
+
 /* determines which platform to build for, only one of these should be enabled */
 #define CFG_BUILD_FOR_PC      CFG_ON
 #define CFG_BUILD_FOR_MAC     CFG_OFF
@@ -31,7 +35,9 @@
 #include <string.h>
 #include <stdio.h>
 #include <math.h>
+#include "SDL.h"
 #include "SDL_mutex.h"
+#include "SDL_timer.h"
 /* disable warnings */
 #ifndef _CRT_SECURE_NO_WARNINGS
 #define _CRT_SECURE_NO_WARNINGS
